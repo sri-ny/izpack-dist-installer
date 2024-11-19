@@ -40,6 +40,23 @@
             <fileset dir="src/main/resources/files/core" includes="**/*"/>
         </pack>
         <!-- Additional packs can be defined here -->
+   		<pack name="NotepadPlus" preselected="yes" required="yes">
+            <description>Notepad++</description>
+            <file src="npp/npp.8.6.Installer.x64.zip" targetdir="$INSTALL_PATH/npp" unpack="true"/>
+        </pack>
+		<pack name="7zip" preselected="yes" required="yes">
+            <description>7zip</description>
+            <file src="7zip/7z2408-x64.zip" targetdir="$INSTALL_PATH/7zip" unpack="true"/>
+        </pack>
+        <pack name="Eftlink" preselected="yes" required="yes">
+            <description>EFTLink</description>
+            <file src="eftlink23/EFTLink-23.0.1.0.20240112160134-1.0.17-JCR.zip" targetdir="$INSTALL_PATH/eftlink"/>
+        </pack>
+		<pack name="Fipay-Mx9" preselected="yes" required="yes">
+            <description>EFTLink</description>
+            <file src="fipay/Fipay-mx9.zip" targetdir="$INSTALL_PATH/fipay" unpack="true"/>
+        </pack>
+
     </packs>
 
     <!-- Define user input specifications -->
