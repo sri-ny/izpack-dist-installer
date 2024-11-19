@@ -1,0 +1,52 @@
+<installation version="5.0">
+    <!-- Define the resources required for the installer -->
+    <resources>
+        <!-- Resource for custom panel JAR -->
+        <res id="CustomPanel.jar" src="target/izpack-panels-1.0-SNAPSHOT.jar"/>
+    </resources>
+
+    <!-- Define the installer information -->
+    <info>
+        <appname>My Custom Installer</appname>
+        <appversion>1.0</appversion>
+        <authors>
+            <author name="Your Name" email="your.email@example.com"/>
+        </authors>
+        <url>http://www.example.com</url>
+    </info>
+
+    <!-- Define the GUI layout -->
+    <guiprefs width="800" height="600" resizable="yes" lookAndFeel="metal" />
+
+    <!-- Define the panels -->
+    <panels>
+        <!-- Add standard panels -->
+        <panel classname="com.izforge.izpack.panels.HelloPanel"/>
+        <panel classname="com.izforge.izpack.panels.LicensePanel"/>
+        <panel classname="com.izforge.izpack.panels.TargetPanel"/>
+        <panel classname="com.izforge.izpack.panels.PacksPanel"/>
+        <panel classname="com.izforge.izpack.panels.InstallPanel"/>
+        <panel classname="com.izforge.izpack.panels.SummaryPanel"/>
+        <panel classname="com.izforge.izpack.panels.InstallationFinishPanel"/>
+        
+        <!-- Add the custom process panel -->
+        <!-- <panel classname="com.example.custom.panel.CustomProcessPanel" id="customProcessPanel"/> -->
+    </panels>
+
+    <!-- Define the packs -->
+    <packs>
+        <pack name="Core Pack" required="yes">
+            <description>Core files needed for the installation.</description>
+            <fileset dir="src/main/resources/files/core" includes="**/*"/>
+        </pack>
+        <!-- Additional packs can be defined here -->
+    </packs>
+
+    <!-- Define user input specifications -->
+    <userInputSpec>
+        <panel id="customProcessPanel">
+            <!-- Define input fields for the custom panel if necessary -->
+            <field type="text" variable="customField" label="Enter custom value:" size="20"/>
+        </panel>
+    </userInputSpec>
+</installation>
